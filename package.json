@@ -1,0 +1,31 @@
+{
+  "name": "pipedown",
+  "version": "0.0.0",
+  "description": "A transform stream wrapper for “marked.”",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "marked": "~0.2.9"
+  },
+  "devDependencies": {
+    "tape": "~1.1.1"
+  },
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/michaelrhodes/pipedown.git"
+  },
+  "keywords": [
+    "markdown",
+    "stream"
+  ],
+  "author": "Michael Rhodes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/michaelrhodes/pipedown/issues"
+  }
+}
