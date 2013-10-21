@@ -1,6 +1,6 @@
 {
   "name": "pipedown",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A transform stream wrapper for “marked.”",
   "main": "index.js",
   "directories": {
