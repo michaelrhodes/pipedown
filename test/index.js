@@ -3,7 +3,9 @@ var fs = require('fs')
 var pipedown = require('../')
 
 run('no options', function(test) {
-  var expected = '<h1>Pipe down, Chachi!</h1>\n'
+  var expected = '<h1 id="pipe-down-chachi-">' +
+    'Pipe down, Chachi!' +
+  '</h1>\n'
   fs.createReadStream(__dirname + '/no-options.md')
     .pipe(pipedown())
     .on('data', function(result) {
