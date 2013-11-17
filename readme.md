@@ -1,5 +1,5 @@
 # pipedown
-pipedown is a transform stream wrapper around the [marked](https://github.com/chjj/marked) Markdown parser/compiler. It let’s you to pipe in arbitrary Markdown and read out the generated HTML.
+pipedown is a transform stream wrapper around the [marked](https://github.com/chjj/marked) Markdown parser/compiler. It lets you to pipe in arbitrary Markdown and read out the generated HTML.
 
 **current version:** 0.0.2
 
