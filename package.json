@@ -1,7 +1,7 @@
 {
   "name": "pipedown",
   "version": "0.0.2",
-  "description": "A transform stream wrapper around the “marked” markdown parser.",
+  "description": "A transform stream wrapper around the “marked” markdown parser/compiler.",
   "main": "index.js",
   "directories": {
     "test": "test"
