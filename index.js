@@ -1,29 +1,25 @@
-var stream = require('stream')
-var util = require('util')
+var through = require('through')
 var marked = require('marked')
 
-var pipedown = function(options) {
-  if (!(this instanceof pipedown)) {
-    return new pipedown(options)
-  }
-  stream.Transform.call(this)
+module.exports = function(options) {
   if (options) {
     marked.setOptions(options)
   }
+
+  var markdown = ''
+  var write = function(data) {
+    markdown += data.toString()
+  }
+  var end = function() {
+    marked(markdown, {}, function(error, markdown) {
+      if (error) {
+        this.emit('error', error)
+        return
+      }
+      this.queue(markdown) 
+      this.queue(null)
+    }.bind(this))
+  }
+
+  return through(write, end)
 }
-
-util.inherits(pipedown, stream.Transform)
-
-pipedown.prototype._transform = function(data, encoding, done) {
-  var thy = this
-  marked(data.toString(), {}, function(error, html) {
-    if (error) {
-      thy.emit('error', error)
-      return
-    }
-    thy.push(html) 
-    done()
-  })
-}
-
-module.exports = pipedown
